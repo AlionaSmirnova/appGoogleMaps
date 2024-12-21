@@ -10,6 +10,7 @@ import {WifiNetworkWithLocation} from '../../redux/actionTypes/actionTypes';
 import Geolocation from '@react-native-community/geolocation';
 import {useDispatch} from 'react-redux';
 
+
 type MainTabsNavigationProp = NativeStackNavigationProp<
   BottomTabParamList,
   'Wifi'
@@ -101,7 +102,7 @@ const WifiModule: React.FC<PropTypes> = ({navigation}: PropTypes) => {
   return (
     <View style={styles.layout}>
       <Pressable onPress={scanWifiNetworks} style={styles.pressable}>
-        <Text style={styles.networkText}>Підключити WIFI</Text>
+        <Text style={styles.networkText}>Почати пошук WIFI мереж...</Text>
       </Pressable>
 
       {wifiNetworks.length > 0 && (

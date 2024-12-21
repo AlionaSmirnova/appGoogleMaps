@@ -13,6 +13,8 @@ import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../redux/store';
+import {Dimensions} from 'react-native';
+const windowHeight = Dimensions.get('window').height;
 
 type MainTabsNavigationProp = NativeStackNavigationProp<
   BottomTabParamList,
@@ -24,7 +26,7 @@ type PropTypes = {
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 600,
+    height: windowHeight,
     width: 400,
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -46,7 +48,6 @@ const MapsModule: React.FC<PropTypes> = ({navigation}: PropTypes) => {
   } | null>(null);
 
   useEffect(() => {
-    console.log(networksData, 'networksData');
     getLocation();
   }, []);
 
@@ -131,7 +132,6 @@ const MapsModule: React.FC<PropTypes> = ({navigation}: PropTypes) => {
                 }}
                 title={item.SSID}
                 description={item.latitude?.toString()}
-
                 pinColor={'green'}
               />
             );

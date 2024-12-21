@@ -1,4 +1,4 @@
-export const ADD_TEXTUAL_DATA = 'ADD_TEXTUAL_DATA';
+export const ADD_BARCODE = 'ADD_BARCODE';
 export const ADD_DEVICE = 'ADD_DEVICE';
 export const SET_DEVICES = 'SET_DEVICES';
 
@@ -13,4 +13,9 @@ export type WifiNetworkWithLocation = {
     timestamp: number;
     latitude: number | null;
     longitude: number | null;
+  };
+
+export type BarcodeData = {
+    type: string |undefined;
+    value: string |undefined;
   };

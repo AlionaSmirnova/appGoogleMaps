@@ -1,17 +1,17 @@
 import {
-  ADD_TEXTUAL_DATA,
+    ADD_BARCODE,
   ADD_DEVICE,
   SET_DEVICES,
   ADD_WIFI_NETWORKS,
   WifiNetworkWithLocation,
+  BarcodeData, 
 } from '../actionTypes/actionTypes';
 
 
-export const addTextualData = (textualData: string) => ({
-  type: ADD_TEXTUAL_DATA,
-  payload: textualData,
-});
-
+export const addBarcode = (barcode: BarcodeData) => ({
+    type: ADD_BARCODE,
+    payload: barcode,
+  });
 export const addDevice = (device: {id: string; name: string | null}) => ({
   type: ADD_DEVICE,
   payload: device,
